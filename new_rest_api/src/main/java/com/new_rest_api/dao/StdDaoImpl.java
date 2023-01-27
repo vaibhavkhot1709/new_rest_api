@@ -46,14 +46,9 @@ public class StdDaoImpl implements StdDao {
 	}
 
 	@Override
-	public Student updateById(int roll) {
+	public Student updateById(Student student) {
 
-		Student s = repository.findById(roll).get();
-		Student s1 = new Student();
-
-//		repository.getById(s1.getRoll());
-		repository.findById(s1.getRoll());
-		return s1;
+		return repository.save(student);
 	}
 
 	@Override

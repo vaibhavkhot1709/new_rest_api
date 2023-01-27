@@ -13,7 +13,7 @@ public interface StdDao {
 
 	public Student getStudentById(int roll) throws InvaliStudentException;
 
-	public Student updateById(int roll);
+	public Student updateById(Student student);
 
 	public void deleteStudent(Student student);
 

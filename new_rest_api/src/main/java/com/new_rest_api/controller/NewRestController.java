@@ -52,10 +52,10 @@ public class NewRestController {
 		return service. getStudentById(roll);
 	}
 	
-	@PostMapping("/student1")
-	public Student updateById(@PathVariable ("roll") int roll) {
+	@PutMapping("/student")
+	public Student updateById(@RequestBody Student student) {
 		
-		return service.updateById(roll);
+		return service.updateById(student);
 	}
 	
 	

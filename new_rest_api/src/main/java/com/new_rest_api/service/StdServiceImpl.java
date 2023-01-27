@@ -30,9 +30,9 @@ public class StdServiceImpl implements StdService {
 		return dao.getStudentById(roll);
 	}
 	@Override
-	public Student updateById(int roll) {
+	public Student updateById(Student student) {
 		// TODO Auto-generated method stub
-		return dao.updateById(roll);
+		return dao.updateById(student);
 	}
 	@Override
 	public void deleteStudent(Student student) {
