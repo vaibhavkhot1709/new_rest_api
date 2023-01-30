@@ -12,6 +12,9 @@ public class ExceptionEroorResponse {
 		this.message = message;
 		this.details = details;
 	}
+	public ExceptionEroorResponse() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getMessage() {
 		return message;
 	}

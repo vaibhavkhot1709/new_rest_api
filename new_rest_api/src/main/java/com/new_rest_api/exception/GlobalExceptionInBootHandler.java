@@ -5,12 +5,12 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class GlobalExceptionInBootHandler extends ResponseEntityExceptionHandler {
 
 	private String INCORRECT_REQUEST = "INCORRECT Student Roll";
@@ -23,7 +23,9 @@ public class GlobalExceptionInBootHandler extends ResponseEntityExceptionHandler
 
 		details.add(ex.getLocalizedMessage());
 
-		ExceptionEroorResponse er = new ExceptionEroorResponse(INCORRECT_REQUEST, details);
+		ExceptionEroorResponse er = new ExceptionEroorResponse();
+		er.setDetails(details);
+		er.setMessage(ex.getMessage());
 		return new ResponseEntity<>(er, HttpStatus.NOT_FOUND);
 
 	}
