@@ -1,3 +1,4 @@
+
 package com.new_rest_api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
